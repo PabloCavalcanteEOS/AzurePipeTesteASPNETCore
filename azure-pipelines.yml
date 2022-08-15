@@ -16,11 +16,11 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
+- task: DotNetCoreCLI@2
   inputs:
-    solution: '**\*.sln'
-    vsVersion: '16.0'
-    clean: true
+    command: 'publish'
+    publishWebProjects: true
+    zipAfterPublish: false
 
 - task: VSTest@2
   inputs:
