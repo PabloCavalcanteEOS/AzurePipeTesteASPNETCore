@@ -18,11 +18,12 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
+    command: 'test'
+
+- task: DotNetCoreCLI@2
+  inputs:
     command: 'publish'
     publishWebProjects: true
     zipAfterPublish: false
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+
